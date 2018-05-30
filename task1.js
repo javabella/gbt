@@ -1,13 +1,11 @@
 (function (){
 	'use strict';
-	var argsAreValid = true;
+
 	var args = process.argv.slice(-2).map(function(arg) {
-		var a = parseInt(arg);
-		argsAreValid &= (a >= 1 && a <= 100);
-		return a;
+		return parseInt(arg);
 	});
 
-	if (!argsAreValid) {
+	if (args[0] < 1 || args[1] > 100) {
 		return false;
 	}
 
